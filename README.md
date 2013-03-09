@@ -3,11 +3,11 @@
 
 Listen to your emails with gmreader. A program that reads your gmail messages right to you.
 
-Simply input you email address and password to run the program. gmreader reads your unseen emails from recent to old. You must have a **Mac OSX or Linux** machine in order to run. And if you have linux, espeak must be installed on your computer, but it usually comes with pre-installed.
+Simply input you email address and password to run the program. gmreader reads your unseen emails from recent to old. You must have a **Mac OSX or Linux** machine in order to run gmreader. And if you have linux, espeak must be installed on your computer, but it usually comes with the pre-installed packages.
 
 **Note: Spam emails and emails formatted similarly are often read incompletely or voided as Undefinable**
 
-tested on: Mac OSX Snow Leopard and Ubuntu 1.2.10
+Tested on: Mac OSX Snow Leopard and Ubuntu 1.2.10
 
 # Install
 To download and install gmreader, you must follow the instructions below.
