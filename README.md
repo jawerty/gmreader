@@ -7,7 +7,7 @@ Simply input you email address and password to run the program. gmreader reads y
 
 **Note: Spam emails and emails formatted similarly are often read incompletely or voided as Undefinable**
 
-Tested on: Mac OSX Snow Leopard and Ubuntu 1.2.10
+Tested on: Mac OSX Snow Leopard and Ubuntu 12.10
 
 # Install
 To download and install gmreader, you must follow the instructions below.
