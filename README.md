@@ -1,5 +1,5 @@
 # gmreader
-**current version: v0.1.3**
+**current version: v0.1.4**
 
 Listen to your emails with gmreader. A program that reads your gmail messages right to you.
 

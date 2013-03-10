@@ -49,6 +49,11 @@ def sythesize_elements(*arg):
 		message = ', '.join(message)
 	return message
 
+def speak(cmd, messages):
+	for i in range(len(messages)):
+		subprocess.call([cmd, messages[i]])
+		time.sleep(0.5)
+
 def reader(server):
 	h = HTMLParser.HTMLParser()#for parsing html in text/html compliant messages
 	
@@ -94,18 +99,11 @@ def reader(server):
 					print "Your os is not compatible with gmreader. Sorry."
 					sys.exit(1)
 
-				try:
-					subprocess.call([cmd, 'Email number, ' + str(msg_num)])
-					time.sleep(0.5)
-					subprocess.call([cmd, 'Subject - ' + Subject])
-					time.sleep(0.5)
-					subprocess.call([cmd, 'Message - ' + Message])
-					time.sleep(1)
-				except:
-					print "Error: \"Make sure your operating system is compliant with gmreader (i.e. mac osx and linux). If linux, you must have espeak installed on your machine.\""
-					sys.exit(1)
+				speech = ['Email number, ' + str(msg_num), 'Subject: ' + Subject, 'fruhm: ' + From, 'Message: ' + Message]
+				speak(cmd, speech)
+
 def main():
-	parser = argparse.ArgumentParser(version='gmreader v0.1.3', description="Listen to your gmails instead of reading them. Let python do the talking.")  
+	parser = argparse.ArgumentParser(version='gmreader v0.1.4', description="Listen to your gmails instead of reading them. Let python do the talking.")  
 
 	parser.add_argument('address', help='Your email address')	
 	parser.add_argument('password', help='The password to your gmail account')
