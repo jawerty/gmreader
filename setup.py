@@ -4,7 +4,7 @@ from setuptools import setup
 
 setup(
       name='gmreader',
-      version='0.1.4',
+      version='0.1.5',
       description='Let python read your google emails to you. Listen to your gmails instead of reading them',
       author='Jared Wright',
       license='MIT',

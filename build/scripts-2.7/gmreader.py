@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/Library/Frameworks/Python.framework/Versions/2.7/Resources/Python.app/Contents/MacOS/Python
 
 import sys, time, subprocess, os
 import getpass, argparse
@@ -7,7 +7,7 @@ import imaplib, email
 
 def getTerminalSize():
 	env = os.environ
-    def ioctl_GWINSZ(fd):
+	def ioctl_GWINSZ(fd):
 		try:
 			import fcntl, termios, struct
 			cr = struct.unpack('hh', fcntl.ioctl(fd, termios.TIOCGWINSZ,'1234'))
@@ -103,7 +103,7 @@ def reader(server):
 				speak(cmd, speech)
 
 def main():
-	parser = argparse.ArgumentParser(version='gmreader v0.1.5', description="Listen to your gmails instead of reading them. Let python do the talking.")  
+	parser = argparse.ArgumentParser(version='gmreader v0.1.4', description="Listen to your gmails instead of reading them. Let python do the talking.")  
 
 	parser.add_argument('address', help='Your email address')	
 	parser.add_argument('password', help='The password to your gmail account')
