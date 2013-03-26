@@ -5,7 +5,7 @@ import getpass, argparse
 import textwrap, BeautifulSoup, HTMLParser
 import imaplib, email
 
-def getTerminalSize():
+def getTerminalSize():#gets size of terminal screen
 	env = os.environ
     def ioctl_GWINSZ(fd):
 		try:
@@ -58,7 +58,7 @@ def reader(server):
 	h = HTMLParser.HTMLParser()#for parsing html in text/html compliant messages
 	
 	server.select(readonly=1)
-	(retcode, msgs) = server.search(None, "UNSEEN")
+	(retcode, msgs) = server.search(None, "UNSEEN")#get unseen messages
 
 	if retcode == 'OK':
 		for msg in reversed(msgs[0].split(' ')):
@@ -91,7 +91,7 @@ def reader(server):
 				print 'Subject: ',Subject,'\n'
 				print 'Message: ',Message,'\n'
 
-				if sys.platform == 'linux' or sys.platform == 'Win32' or sys.platform == 'linux2':
+				if sys.platform == 'linux' or sys.platform == 'Win32' or sys.platform == 'linux2':#checks if system is linux/windows or mac
 					cmd = 'espeak'
 				elif sys.platform == 'darwin':
 					cmd = 'say'
@@ -99,11 +99,13 @@ def reader(server):
 					print "Your os is not compatible with gmreader. Sorry."
 					sys.exit(1)
 
+				#compiles message into one array of text
 				speech = ['Email number, ' + str(msg_num), 'Subject: ' + Subject, 'fruhm: ' + From, 'Message: ' + Message]
-				speak(cmd, speech)
+				
+				speak(cmd, speech)#start speech mechanism ->see above
 
 def main():
-	parser = argparse.ArgumentParser(version='gmreader v0.1.5', description="Listen to your gmails instead of reading them. Let python do the talking.")  
+	parser = argparse.ArgumentParser(version='gmreader v0.1.6', description="Listen to your gmails instead of reading them. Let python do the talking.")  
 
 	parser.add_argument('address', help='Your email address')	
 	parser.add_argument('password', help='The password to your gmail account')
@@ -129,5 +131,6 @@ def main():
 
 	reader(mail_server)	
 	mail_server.close()
+
 if __name__ == '__main__':
 	main()
